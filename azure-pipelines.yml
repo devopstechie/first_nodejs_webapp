@@ -38,5 +38,5 @@ steps:
     azureSubscription: 'Free Trial (e70a2ce1-6df7-4abe-a11a-03988e0d2a4f)'
     appType: 'webApp'
     appName: 'NodejsSamplecode'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(System.DefaultWorkingDirectory)\InnovationInABox-CI\drop\s\build'
     customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'
