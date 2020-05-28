@@ -33,13 +33,6 @@ steps:
 - task: PublishBuildArtifacts@1
 
 
-
-- task: Npm@1
-  inputs:
-     command: publish
-     publishRegistry: useFeed
-     publishFeed: https://my.npmregistry.com
-
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Free Trial (e70a2ce1-6df7-4abe-a11a-03988e0d2a4f)'
