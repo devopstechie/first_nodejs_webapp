@@ -23,17 +23,6 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    Contents: 'build/**' # Pull the build directory (React)
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  inputs: 
-    pathtoPublish: $(Build.ArtifactStagingDirectory) # dist or build files
-    ArtifactName: 'www' # output artifact named www
-
-
-- task: CopyFiles@2
-  inputs:
     SourceFolder: '$(System.DefaultWorkingDirectory)'
     Contents: |
       **\*.js
@@ -41,3 +30,18 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
+
+
+
+- task: Npm@1
+  inputs:
+     command: publish
+     publishRegistry: useFeed
+     publishFeed: https://my.npmregistry.com
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (e70a2ce1-6df7-4abe-a11a-03988e0d2a4f)'
+    appType: 'webAppLinux'
+    appName: 'NodejsSamplecode'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
