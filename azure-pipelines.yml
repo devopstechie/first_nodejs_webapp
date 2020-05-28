@@ -42,6 +42,7 @@ steps:
 - task: AzureWebApp@1
   inputs:
     azureSubscription: 'Free Trial (e70a2ce1-6df7-4abe-a11a-03988e0d2a4f)'
-    appType: 'webAppLinux'
+    appType: 'webApp'
     appName: 'NodejsSamplecode'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
