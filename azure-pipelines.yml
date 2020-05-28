@@ -45,4 +45,3 @@ steps:
     appType: 'webApp'
     appName: 'NodejsSamplecode'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    deploymentMethod: 'auto'
