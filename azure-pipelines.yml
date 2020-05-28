@@ -45,3 +45,4 @@ steps:
     appType: 'webApp'
     appName: 'NodejsSamplecode'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    customWebConfig: '-Handler iisnode -NodeStartFile server.js -appType node'
