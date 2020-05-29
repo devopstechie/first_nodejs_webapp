@@ -21,13 +21,3 @@ steps:
   displayName: 'npm install and build'
 
 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-      ConnectionType: 'AzureRM'
-      azureSubscription: 'Free Trial (e70a2ce1-6df7-4abe-a11a-03988e0d2a4f)'
-      appType: 'webAppContainer'
-      WebAppName: 'nodejsDocker'
-      DockerNamespace: 'dockerazurereg.azurecr.io'
-      DockerRepository: 'ubuntu'
-      DockerImageTag: '18.04'
-      StartupCommand: 'bash'
